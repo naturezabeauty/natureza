@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Natureza — Your Beauty Ritual at Your Doorstep</title>
+<meta name="description" content="Natureza — Beauty at your doorstep. Services, prices, products, cart demo, contact." />
+<style>
+:root{
+  --bg:#07100d; --card:#0f1b17; --muted:#9fcfb9; --text:#e9f7f1; --accent:#22c55e; --glass:rgba(255,255,255,0.03);
+  --maxW:1200px;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#07100d 0%, #071414 60%);color:var(--text);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.container{max-width:var(--maxW);margin:0 auto;padding:24px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,#22c55e,#34d399);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 35px rgba(34,197,94,0.14);font-weight:800;color:#042012;font-size:18px}
+.title{line-height:1;margin:0}
+.slogan{font-size:13px;color:var(--muted)}
+
+.hero{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:center;margin-top:18px}
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:18px;padding:22px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 20px 50px rgba(3,7,6,0.6);position:relative;overflow:visible}
+.hero h1{margin:0;font-size:28px}
+.hero p{margin:10px 0;color:var(--muted)}
+
+/* 3D stylistic scene */
+.scene{position:relative;height:320px;border-radius:12px;background:linear-gradient(180deg,#0b1b16,#061210);overflow:hidden;display:flex;align-items:end;justify-content:center;padding:18px}
+.plinth{width:82%;height:110px;background:linear-gradient(180deg,#0f2b22,#072218);border-radius:12px;box-shadow:0 30px 60px rgba(2,6,5,0.6);transform:translateY(6px) perspective(800px) rotateX(6deg);display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
+.figure{width:46%;height:86px;border-radius:12px;background:linear-gradient(180deg,#123e2d,#063024);box-shadow:inset 0 2px 10px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;flex-direction:column;transform:translateY(-10px)}
+.figure .face{width:60px;height:60px;border-radius:50%;background:linear-gradient(180deg,#ffe7d6,#ffd5be);box-shadow:0 6px 18px rgba(0,0,0,0.45);display:block}
+.figure .label{font-size:12px;margin-top:8px;color:var(--muted)}
+
+/* realistic card to the right */
+.card-hero{width:420px;height:320px;border-radius:18px;background:linear-gradient(180deg,#092118,#062019);padding:18px;border:1px solid rgba(255,255,255,0.03)}
+.card-hero h3{margin:0 0 8px 0}
+.features{display:flex;gap:10px;flex-wrap:wrap}
+
+/* Products grid */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.prod{background:var(--card);border-radius:12px;padding:12px;border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;gap:8px;min-height:160px}
+.prod .img{height:88px;border-radius:10px;background:linear-gradient(180deg,#0f2b22,#082017);display:flex;align-items:center;justify-content:center;font-weight:800;color:#bfead0;font-size:20px}
+.row{display:flex;align-items:center;justify-content:space-between}
+
+/* Services Table */
+.services-section{margin-top:36px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03)}
+.services-section h2{margin:0 0 12px 0}
+.controls{display:flex;gap:10px;align-items:center;margin-bottom:10px}
+.controls input, .controls select{padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);min-width:180px}
+.table-wrap{overflow:auto;border-radius:8px;border:1px solid rgba(255,255,255,0.02);margin-top:8px}
+table{width:100%;border-collapse:collapse;min-width:900px}
+thead th{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));padding:10px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.03);font-size:13px;color:var(--muted)}
+tbody td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.02);font-size:14px}
+.price{font-weight:800;color:var(--accent)}
+
+/* Contact */
+.contact{margin-top:28px;padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.0));border:1px solid rgba(255,255,255,0.02);display:flex;gap:12px;align-items:center;justify-content:space-between}
+.contact .left{display:flex;gap:12px;align-items:center}
+.contact .left .info{display:flex;flex-direction:column;gap:4px}
+.links a{display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);margin-right:8px;color:var(--muted);text-decoration:none;font-size:13px}
+
+/* Footer */
+footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
+
+/* Responsive */
+@media (max-width: 980px){
+  .hero{grid-template-columns:1fr;gap:12px}
+  .products{grid-template-columns:repeat(2,1fr)}
+  table{min-width:700px}
+}
+@media (max-width:560px){
+  .products{grid-template-columns:1fr}
+  table{min-width:600px}
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">N</div>
+        <div>
+          <h3 class="title">Natureza</h3>
+          <div class="slogan">Your Beauty Ritual at Your Doorstep</div>
+        </div>
+      </div>
+      <div>
+        <button onclick="openCart()" style="padding:10px 14px;border-radius:10px;background:var(--accent);border:0;color:#062412;font-weight:700;cursor:pointer">Open Cart</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Real beauty, at home or in salon — we bring the experience to you.</h1>
+        <p>Professional beauticians, realistic at-home & salon vibe. Book facials, waxing, nails, hair and full spa combos. Try the demo cart & services below.</p>
+
+        <div class="scene" aria-hidden="true">
+          <div class="plinth" role="img" aria-hidden="true">
+            <div class="figure" title="Beautician">
+              <div class="face"></div>
+              <div class="label">Beautician</div>
+            </div>
+            <div style="width:18px"></div>
+            <div class="figure" title="Client">
+              <div class="face" style="background:linear-gradient(180deg,#ffd7c4,#ffcfb8)"></div>
+              <div class="label">Client</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:12px;display:flex;gap:10px">
+          <a class="links" href="#services" style="text-decoration:none"><button style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text);cursor:pointer">View Services & Rates</button></a>
+          <a class="links" href="#contact"><button style="padding:10px 14px;border-radius:10px;background:var(--accent);border:0;color:#062412;cursor:pointer">Contact Us</button></a>
+        </div>
+      </div>
+
+      <div class="card-hero">
+        <h3>Why choose Natureza?</h3>
+        <div class="features">
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);min-width:160px">
+            <strong>Real Beauticians</strong><div style="font-size:13px;color:var(--muted)">Background checked</div>
+          </div>
+          <div style="padding:10px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);min-width:160px">
+            <strong>Home & Salon</strong><div style="font-size:13px;color:var(--muted)">Choose your vibe</div>
+          </div>
+        </div>
+
+        <div style="margin-top:14px">
+          <div style="font-size:13px;color:var(--muted)">Demo Products</div>
+          <div class="products" id="products">
+            <!-- products injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services & Rates -->
+    <section id="services" class="services-section" aria-labelledby="services-heading">
+      <h2 id="services-heading">Services & Rates</h2>
+      <div class="controls">
+        <input id="searchService" placeholder="Search service name or category..." />
+        <select id="filterCat"><option value="">All Categories</option></select>
+        <select id="filterSub"><option value="">All Sub-categories</option></select>
+      </div>
+      <div class="table-wrap">
+        <table id="servicesTable" role="table" aria-label="Services and rates">
+          <thead>
+            <tr><th>Service Category</th><th>Service Sub-Category</th><th>Services Offered</th><th>Services Rate</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div class="left">
+        <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(180deg,#22c55e,#34d399);display:flex;align-items:center;justify-content:center;font-weight:800;color:#062412">N</div>
+        <div class="info">
+          <div style="font-weight:700">Natureza</div>
+          <div style="color:var(--muted)">Your Beauty Ritual at Your Doorstep</div>
+          <div style="margin-top:6px;color:var(--muted)">
+            <div>📞 <a href="tel:+917977858909">+91 79778 58909</a></div>
+            <div>📧 <a href="mailto:naturalbeautymumbai@gmail.com">naturalbeautymumbai@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="right links">
+        <a href="https://facebook.com/naturezabeauty" target="_blank" rel="noopener">facebook.com/naturezabeauty</a>
+        <a href="https://www.facebook.com/naturezabeauty/reviews" target="_blank" rel="noopener">Reviews</a>
+        <a href="https://youtube.com/@naturezamumbai" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.natureza.in" target="_blank" rel="noopener">www.natureza.in</a>
+      </div>
+    </section>
+
+    <footer>© Natureza — All rights reserved.</footer>
+  </div>
+
+<script>
+// Sample demo products (smaller set shown in hero)
+const demoProducts = [
+  {name:'Ozone Gold Facial', price:999, cat:'Facials'},
+  {name:'Full Hand Wax', price:299, cat:'Waxing'},
+  {name:'Keratin Hair Spa', price:1299, cat:'Hair Care'},
+  {name:'Gel Nail Paint', price:349, cat:'Nails'},
+  {name:'Aroma Body Spa', price:1499, cat:'Spa'},
+  {name:'Bridal Makeup', price:6999, cat:'Bridal'}
+];
+const productsEl = document.getElementById('products');
+demoProducts.forEach(p=>{
+  const d = document.createElement('div');
+  d.className='prod';
+  d.innerHTML = `<div class="img" style="background-image:url('prod1.jpg');background-size:cover;background-position:center"></div><div style="font-weight:700">${p.name}</div><div class="row"><div class="muted">${p.cat}</div><div class="price">₹${p.price}</div></div>`;
+  productsEl.appendChild(d);
+});
+
+/* Services data parsed from user input */
+const servicesData = [
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Hand Picked Facials Guilt Free Anti Oxident Facial (All skin types)","Services Rate":"2500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Hand Picked Facials X-Press Clean up Facial","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Anti Aging Avocado Age Reverse","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Anti Ance Tomato Tan Eliminator","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Blemish Control Quinoa Blemish Control","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Brightening Mulberry Brightening","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Sensitive Skin Chamomiles Calming","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Signature Skin Diet Facial for Anti Acne Cinnamon Acne Control","Services Rate":"1800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Body","Services Rate":"2000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Legs","Services Rate":"600"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Hand Bleach","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Feet Bleach","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Hands","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Face Bleach","Services Rate":"400"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Face & Nack","Services Rate":"300"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"De Ten Service Feet","Services Rate":"200"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Facial Application*","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"NA","Services Rate":""},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"NA","Services Rate":""},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"NA","Services Rate":""},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"NA","Services Rate":""},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"03 + vitamin C facial","Services Rate":"3500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"03 + Facial whitening","Services Rate":"2500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"03 + cleanup","Services Rate":"1500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"03 + Facial","Services Rate":"2000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"03 + Peel of Mask Face + Neck","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Bleach Face + Half Front + Half Back","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"Face massage with O3 + cream 20 minute","Services Rate":"600"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"O3 + Premium 60 minute","Services Rate":"7500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Facial","Services Offered":"O3 + Gold","Services Rate":"3500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Body","Services Rate":"2100"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Bikni","Services Rate":"800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Full-Legs","Services Rate":"450"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Face","Services Rate":"300"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Back","Services Rate":"350"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Hands","Services Rate":"300"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Half-Legs","Services Rate":"250"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Stomach","Services Rate":"250"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Honey Wax Underarm","Services Rate":"100"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Roll on Wax - Full + Legs + Full Hands + Underarms","Services Rate":"1300"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Pellet Wax Face","Services Rate":"400"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Body","Services Rate":"3000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Bikni","Services Rate":"800"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Full-Legs","Services Rate":"550"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Back","Services Rate":"450"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Hands","Services Rate":"400"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Half-Legs","Services Rate":"350"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"LiposolubleWax Stomach","Services Rate":"350"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Liposoluble Wax Underarm","Services Rate":"150"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Rica Wax - Full hand + Full Leg + Underarms (Liposoluble / Chocolate)","Services Rate":"1100"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Waxing","Services Offered":"Rica Wax - Full hand + Half Leg + Underarms (Liposoluble / Chocolate)","Services Rate":"900"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Manicure","Services Offered":"Marine Sea Agee Manicure","Services Rate":"1500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Manicure","Services Offered":"Get Iced Manicure","Services Rate":"1200"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Manicure","Services Offered":"Exquisite Spa Manicure","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Manicure","Services Offered":"Basic Manicure","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Pedicure","Services Offered":"Marine Sea Agee Pedicure","Services Rate":"1500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Pedicure","Services Offered":"Get Iced Pedicure","Services Rate":"1200"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Pedicure","Services Offered":"Exquisite Spa Pedicure","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Pedicure","Services Offered":"Basic Pedicure","Services Rate":"700"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Pedicure","Services Offered":"Nail Cut & Filing + Regular Nail Polish","Services Rate":"150"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Face Threading","Services Rate":"200"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Eye Brow","Services Rate":"35"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Sidelocks","Services Rate":"50"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Upper Lips","Services Rate":"25"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Chin","Services Rate":"25"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Threading","Services Offered":"Forehead","Services Rate":"25"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Hot Candle Massage Full Body with Oil on Head","Services Rate":"1500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Hot Candle Massage Full Body","Services Rate":"1200"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Hot Candle Massage Back","Services Rate":"550"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Hot Candle Massage Foot-Half Legs","Services Rate":"550"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Swedish Massage","Services Rate":"1000"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"18 Herbs Head Massage","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Vitalizing Head Massage","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Back Massage","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Massage","Services Offered":"Foot Massage","Services Rate":"500"},
+{"Service Category":"Skin Treatment","Service Sub-Category":"Body Polishing","Services Offered":"Body Polishing","Services Rate":"2000"},
+{"Service Category":"Hair Treatments","Service Sub-Category":"Hair Treatments","Services Offered":"Hair Color Apply","Services Rate":"400"},
+{"Service Category":"Hair Treatments","Service Sub-Category":"Hair Treatments","Services Offered":"Karetin Spa* (Any Length)","Services Rate":"1000"},
+{"Service Category":"Hair Treatments","Service Sub-Category":"Hair Treatments","Services Offered":"Global Haircolor Application* (Shoulder Length)","Services Rate":"550"},
+{"Service Category":"Hair Treatments","Service Sub-Category":"Hair Treatments","Services Offered":"Henna Application* (Shoulder Length)","Services Rate":"400"},
+{"Service Category":"Hair Treatments","Service Sub-Category":"Hair Treatments","Services Offered":"Root Touch up Application*","Services Rate":"400"}
+];
+
+// populate filters
+const cats = Array.from(new Set(servicesData.map(s=>s['Service Category'])));
+const subcats = Array.from(new Set(servicesData.map(s=>s['Service Sub-Category'])));
+const filterCat = document.getElementById('filterCat');
+const filterSub = document.getElementById('filterSub');
+cats.forEach(c=> { const o=document.createElement('option'); o.value=c; o.textContent=c; filterCat.appendChild(o); });
+subcats.forEach(s=> { const o=document.createElement('option'); o.value=s; o.textContent=s; filterSub.appendChild(o); });
+
+const tbody = document.querySelector('#servicesTable tbody');
+function renderServices(filter=''){
+  tbody.innerHTML='';
+  const q = (document.getElementById('searchService').value||'').trim().toLowerCase();
+  const fc = filterCat.value;
+  const fs = filterSub.value;
+  const filtered = servicesData.filter(row=>{
+    if(fc && row['Service Category']!==fc) return false;
+    if(fs && row['Service Sub-Category']!==fs) return false;
+    if(!q) return true;
+    return (row['Services Offered']||'').toLowerCase().includes(q) || (row['Service Category']||'').toLowerCase().includes(q) || (row['Service Sub-Category']||'').toLowerCase().includes(q);
+  });
+  filtered.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${r['Service Category']||''}</td><td>${r['Service Sub-Category']||''}</td><td>${r['Services Offered']||''}</td><td class="price">₹${r['Services Rate']||''}</td>`;
+    tbody.appendChild(tr);
+  });
+}
+document.getElementById('searchService').addEventListener('input', ()=> renderServices());
+filterCat.addEventListener('change', ()=> renderServices());
+filterSub.addEventListener('change', ()=> renderServices());
+renderServices();
+
+/* Minimal Cart open stub for demo */
+function openCart(){
+  alert('Cart demo built into full demo. Use earlier ZIP or request cart view — this demo focuses on services and contact.')
+}
+</script>
+
+</body>
+</html>
