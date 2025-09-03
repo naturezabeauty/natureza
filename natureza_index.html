@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Natureza – Beauty rituals at your door step</title>
+  <meta name="description" content="Natureza – Beauty rituals at your door step. Shop services and book from home. Facials, Waxing, Massage, Manicure, Pedicure, Threading, Hair & Skin Care." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--bg:#fffaf8;--card:#ffffff;--primary:#e11d48;--primary-2:#be123c;--muted:#6b7280;--text:#111827;--shadow:0 10px 25px rgba(17,24,39,.08);--radius:18px}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Noto Sans,sans-serif}
+    .container{max-width:1200px;margin:0 auto;padding:20px}
+    header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.8);backdrop-filter:saturate(1.5) blur(10px);border-bottom:1px solid #f3f4f6}
+    .nav{display:flex;align-items:center;gap:16px;justify-content:space-between;padding:14px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#fecdd3,#fca5a5);display:grid;place-items:center;box-shadow:var(--shadow)}
+    .title h1{font-size:18px;margin:0;font-weight:800}
+    .title small{color:var(--muted)}
+    .actions{display:flex;gap:10px}
+    .btn{appearance:none;border:0;border-radius:12px;padding:10px 14px;font-weight:600;cursor:pointer}
+    .btn.primary{background:var(--primary);color:white}
+    .btn.ghost{background:#fff;border:1px solid #e5e7eb}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;padding:28px 20px}
+    .hero-card{background:linear-gradient(180deg,#fff, #fff0);border:1px solid #f3f4f6;border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+    .hero img{width:100%;border-radius:22px;box-shadow:var(--shadow);object-fit:cover;max-height:360px}
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:8px 0 18px}
+    .field{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:10px 12px}
+    .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    @media (max-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}.hero{grid-template-columns:1fr}}
+    @media (max-width:720px){.grid{grid-template-columns:repeat(2,1fr)}}@media (max-width:480px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--card);border:1px solid #f3f4f6;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .thumb{height:120px;background:linear-gradient(135deg,#ffe4e6,#fde68a);display:grid;place-items:center;font-weight:800;color:#9f1239}
+    .card .body{padding:14px}
+    .price{font-weight:700;margin:6px 0}
+    .muted{color:var(--muted)}
+    .cart{position:fixed;right:16px;bottom:16px;width:340px;max-height:75vh;background:#ffffff;border:1px solid #f3f4f6;border-radius:18px;box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+    .cart .list{padding:10px;overflow:auto}
+    .row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;padding:8px 10px;border:1px dashed #e5e7eb;border-radius:12px;margin-bottom:8px}
+    .qty button{width:28px;height:28px;border-radius:8px;border:1px solid #e5e7eb;background:#fff;cursor:pointer}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand">
+        <div class="logo"><span>NZ</span></div>
+        <div class="title">
+          <h1>Natureza</h1>
+          <small>Beauty rituals at your door step</small>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn ghost" href="#catalog">Browse Services</a>
+        <a class="btn primary" href="https://wa.me/917977858909" target="_blank">Book on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero container">
+    <div class="hero-card">
+      <h2>Glow at Home ✨</h2>
+      <p>Facials, waxing, massage, manicure, pedicure, threading, hair & skin care. Add to cart and book instantly on WhatsApp.</p>
+      <div class="cta">
+        <a class="btn primary" href="#catalog">Shop Services</a>
+        <button class="btn ghost" id="clearCart">Clear Cart</button>
+      </div>
+      <div class="notice" style="margin-top:12px;">Hosted on GitHub Pages / Netlify / Vercel – Free SSL auto.</div>
+    </div>
+    <img alt="Natureza beauty services" src="https://images.unsplash.com/photo-1556228724-4a77f0b2d3c5?q=80&w=1200&auto=format&fit=crop" />
+  </section>
+
+  <section class="container" id="catalog">
+    <div class="toolbar">
+      <div class="field">
+        <span>🔎</span>
+        <input id="search" placeholder="Search services… (e.g. Facial, Waxing)" />
+      </div>
+      <div class="field">
+        <span>🧩</span>
+        <select id="category">
+          <option value="">All Categories</option>
+        </select>
+      </div>
+      <div class="field">
+        <span>↕️</span>
+        <select id="sort">
+          <option value="pop">Sort: Popular</option>
+          <option value="az">A → Z</option>
+          <option value="lh">Price: Low → High</option>
+          <option value="hl">Price: High → Low</option>
+        </select>
+      </div>
+      <span class="pill" id="countPill">0 items</span>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <aside class="cart" aria-live="polite">
+    <header class="nav" style="padding:12px 14px">
+      <h4>🛒 Cart</h4>
+      <span class="badge" id="cartBadge">EMPTY</span>
+    </header>
+    <div class="list" id="cartList"></div>
+    <div class="footer" style="padding:12px;border-top:1px solid #f3f4f6">
+      <div class="tot" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><strong>Total</strong><strong id="total">₹0</strong></div>
+      <button class="btn primary" id="checkout">Checkout via WhatsApp</button>
+      <div class="notice" style="margin-top:8px">No payment collected here. You will confirm via WhatsApp.</div>
+    </div>
+  </aside>
+
+  <script>
+    const PRODUCTS = [
+      {code:"A11", cat:"Facial", name:"Hand Picked Facials - Guilt Free Anti Oxidant Facial (All skin types)", price:2500},
+      {code:"A12", cat:"Facial", name:"Hand Picked Facials - X-Press Clean up Facial", price:1000},
+      {code:"A13", cat:"Facial", name:"Signature Skin Diet Facial - Avocado Age Reverse", price:1800},
+      {code:"A14", cat:"Facial", name:"Signature Skin Diet Facial - Tomato Tan Eliminator", price:1800},
+      {code:"A15", cat:"Facial", name:"Signature Skin Diet Facial - Quinoa Blemish Control", price:1800},
+      {code:"A16", cat:"Facial", name:"Signature Skin Diet Facial - Mulberry Brightening", price:1800},
+      {code:"A17", cat:"Facial", name:"Signature Skin Diet Facial - Chamomiles Calming (Sensitive Skin)", price:1800},
+      {code:"A18", cat:"Facial", name:"Signature Skin Diet Facial - Cinnamon Acne Control", price:1800},
+      {code:"A19", cat:"Facial", name:"De Tan Service - Body", price:2000},
+      {code:"A110", cat:"Facial", name:"De Tan Service - Legs", price:600},
+      {code:"A111", cat:"Facial", name:"De Tan Service - Hand Bleach", price:500},
+      {code:"A112", cat:"Facial", name:"De Tan Service - Feet Bleach", price:500},
+      {code:"A113", cat:"Facial", name:"De Tan Service - Hands", price:500},
+      {code:"A114", cat:"Facial", name:"De Tan Service - Face Bleach", price:400},
+      {code:"A115", cat:"Facial", name:"De Tan Service - Face & Neck", price:300},
+      {code:"A116", cat:"Facial", name:"De Tan Service - Feet", price:200},
+      {code:"A117", cat:"Facial", name:"Facial Application*", price:1000},
+      {code:"A122", cat:"Facial", name:"O3 + Vitamin C Facial", price:3500},
+      {code:"A123", cat:"Facial", name:"O3 + Facial Whitening", price:2500},
+      {code:"A124", cat:"Facial", name:"O3 + Cleanup", price:1500},
+      {code:"A125", cat:"Facial", name:"O3 + Facial", price:2000},
+      {code:"A126", cat:"Facial", name:"O3 + Peel or Mask Face + Neck", price:1000},
+      {code:"A127", cat:"Facial", name:"Bleach Face + Half Front + Half Back", price:1000},
+      {code:"A128", cat:"Facial", name:"Face Massage with O3 + Cream (20 min)", price:600},
+      {code:"A129", cat:"Facial", name:"O3 + Premium (60 minute)", price:7500},
+      {code:"A130", cat:"Facial", name:"O3 + Gold", price:3500},
+
+      {code:"A21", cat:"Waxing", name:"Honey Wax - Body", price:2100},
+      {code:"A22", cat:"Waxing", name:"Honey Wax - Bikini", price:800},
+      {code:"A23", cat:"Waxing", name:"Honey Wax - Full Legs", price:450},
+      {code:"A24", cat:"Waxing", name:"Honey Wax - Face", price:300},
+      {code:"A25", cat:"Waxing", name:"Honey Wax - Back", price:350},
+      {code:"A26", cat:"Waxing", name:"Honey Wax - Hands", price:300},
+      {code:"A27", cat:"Waxing", name:"Honey Wax - Half Legs", price:250},
+      {code:"A28", cat:"Waxing", name:"Honey Wax - Stomach", price:250},
+      {code:"A29", cat:"Waxing", name:"Honey Wax - Underarm", price:100},
+      {code:"A210", cat:"Waxing", name:"Roll on Wax - Full + Legs + Full Hands + Underarms", price:1300},
+      {code:"A211", cat:"Waxing", name:"Pellet Wax - Face", price:400},
+      {code:"A212", cat:"Waxing", name:"Liposoluble Wax - Body", price:3000},
+      {code:"A213", cat:"Waxing", name:"Liposoluble Wax - Bikini", price:800},
+      {code:"A214", cat:"Waxing", name:"Liposoluble Wax - Full Legs", price:550},
+      {code:"A215", cat:"Waxing", name:"Liposoluble Wax - Back", price:450},
+      {code:"A216", cat:"Waxing", name:"Liposoluble Wax - Hands", price:400},
+      {code:"A217", cat:"Waxing", name:"Liposoluble Wax - Half Legs", price:350},
+      {code:"A218", cat:"Waxing", name:"Liposoluble Wax - Stomach", price:350},
+      {code:"A219", cat:"Waxing", name:"Liposoluble Wax - Underarm", price:150},
+      {code:"A220", cat:"Waxing", name:"Rica Wax - Full hand + Full Leg + Underarms (Liposoluble / Chocolate)", price:1100},
+      {code:"A221", cat:"Waxing", name:"Rica Wax - Full hand + Half Leg + Underarms (Liposoluble / Chocolate)", price:900},
+
+      {code:"A31", cat:"Manicure", name:"Marine Sea Agee Manicure", price:1500},
+      {code:"A32", cat:"Manicure", name:"Get Iced Manicure", price:1200},
+      {code:"A33", cat:"Manicure", name:"Exquisite Spa Manicure", price:1000},
+      {code:"A34", cat:"Manicure", name:"Basic Manicure", price:500},
+
+      {code:"A41", cat:"Pedicure", name:"Marine Sea Agee Pedicure", price:1500},
+      {code:"A42", cat:"Pedicure", name:"Get Iced Pedicure", price:1200},
+      {code:"A43", cat:"Pedicure", name:"Exquisite Spa Pedicure", price:1000},
+      {code:"A44", cat:"Pedicure", name:"Basic Pedicure", price:700},
+      {code:"A45", cat:"Pedicure", name:"Nail Cut & Filing + Regular Nail Polish", price:150},
+
+      {code:"B51", cat:"Threading", name:"Face Threading", price:200},
+      {code:"B52", cat:"Threading", name:"Eye Brow", price:35},
+      {code:"B53", cat:"Threading", name:"Sidelocks", price:50},
+      {code:"B54", cat:"Threading", name:"Upper Lips", price:25},
+      {code:"B55", cat:"Threading", name:"Chin", price:25},
+      {code:"B56", cat:"Threading", name:"Forehead", price:25},
+
+      {code:"C61", cat:"Massage", name:"Hot Candle Massage Full Body with Oil on Head", price:1500},
+      {code:"C62", cat:"Massage", name:"Hot Candle Massage Full Body", price:1200},
+      {code:"C63", cat:"Massage", name:"Hot Candle Massage Back", price:550},
+      {code:"C64", cat:"Massage", name:"Hot Candle Massage Foot - Half Legs", price:550},
+      {code:"C65", cat:"Massage", name:"Swedish Massage", price:1000},
+      {code:"C66", cat:"Massage", name:"18 Herbs Head Massage", price:500},
+      {code:"C67", cat:"Massage", name:"Vitalizing Head Massage", price:500},
+      {code:"C68", cat:"Massage", name:"Back Massage", price:500},
+      {code:"C69", cat:"Massage", name:"Foot Massage", price:500},
+
+      {code:"D71", cat:"Body Polishing", name:"Body Polishing", price:2000},
+
+      {code:"E81", cat:"Hair Treatments", name:"Hair Color Apply", price:400},
+      {code:"E82", cat:"Hair Treatments", name:"Keratin Spa (Any Length)", price:1000},
+      {code:"E83", cat:"Hair Treatments", name:"Global Haircolor Application (Shoulder Length)", price:550},
+      {code:"E84", cat:"Hair Treatments", name:"Henna Application (Shoulder Length)", price:400},
+      {code:"E85", cat:"Hair Treatments", name:"Root Touch Up Application", price:400}
+    ];
+
+
+    const formatINR = (n)=>`₹${n.toLocaleString('en-IN')}`;
+    const state = {q:'', cat:'', sort:'pop', cart: JSON.parse(localStorage.getItem('nz_cart')||'[]')};
+    const $grid = document.getElementById('grid');
+    const $search = document.getElementById('search');
+    const $category = document.getElementById('category');
+    const $sort = document.getElementById('sort');
+    const $count = document.getElementById('countPill');
+    const $cartList = document.getElementById('cartList');
+    const $total = document.getElementById('total');
+    const $badge = document.getElementById('cartBadge');
+
+    const cats = Array.from(new Set(PRODUCTS.map(p=>p.cat))).sort();
+    for(const c of cats){const o=document.createElement('option');o.value=c;o.textContent=c;$category.appendChild(o)}
+
+    function render(){
+      let items = PRODUCTS.filter(p => (!state.cat || p.cat===state.cat) && (!state.q || (p.name.toLowerCase().includes(state.q)||p.code.toLowerCase().includes(state.q))));
+      if(state.sort==='az') items.sort((a,b)=>a.name.localeCompare(b.name));
+      if(state.sort==='lh') items.sort((a,b)=>a.price-b.price);
+      if(state.sort==='hl') items.sort((a,b)=>b.price-a.price);
+      $grid.innerHTML='';
+      items.forEach(p=>{
+        const card=document.createElement('div');card.className='card';
+        card.innerHTML=`<div class="thumb">${p.cat}</div><div class="body"><h3>${p.name}</h3><div class="muted">Code: ${p.code}</div><div class="price">${formatINR(p.price)}</div><button class="btn primary" data-add="${p.code}">Add to Cart</button></div>`;
+        $grid.appendChild(card);
+      });
+      document.getElementById('countPill').textContent = `${items.length} items`;
+    }
+
+    function saveCart(){localStorage.setItem('nz_cart', JSON.stringify(state.cart));}
+    function addToCart(code){const item=PRODUCTS.find(p=>p.code===code); if(!item) return; const existing=state.cart.find(i=>i.code===code); if(existing) existing.qty++; else state.cart.push({code:item.code,itemName:item.name,price:item.price,qty:1}); saveCart(); renderCart();}
+    function inc(code){const it=state.cart.find(i=>i.code===code); if(it){it.qty++; saveCart(); renderCart();}}
+    function dec(code){const it=state.cart.find(i=>i.code===code); if(!it) return; it.qty--; if(it.qty<=0) state.cart=state.cart.filter(i=>i.code!==code); saveCart(); renderCart();}
+
+    function renderCart(){ $cartList.innerHTML=''; let total=0,count=0; state.cart.forEach(i=>{ total += i.price * i.qty; count += i.qty; const row=document.createElement('div'); row.className='row'; row.innerHTML=`<div><div class="title">${i.itemName}</div><div class="muted">${i.code} • ${formatINR(i.price)}</div></div><div class="qty"><button data-dec="${i.code}">−</button><strong>${i.qty}</strong><button data-inc="${i.code}">+</button></div>`; $cartList.appendChild(row); }); $total.textContent=formatINR(total); $badge.textContent = count? `${count} in cart` : 'EMPTY'; }
+
+    document.getElementById('checkout').addEventListener('click',()=>{
+      if(!state.cart.length){alert('Cart is empty');return}
+      const lines = state.cart.map(i=>`• ${i.itemName} (x${i.qty}) — ${formatINR(i.price*i.qty)}`);
+      const total = state.cart.reduce((s,i)=>s+i.qty*i.price,0);
+      const msg = encodeURIComponent(`Hello Natureza,%0AI want to book:%0A${lines.join('%0A')}%0A%0ATotal: ${formatINR(total)}%0AName:%0APreferred Date/Time:%0ALocation:`);
+      window.open(`https://wa.me/917977858909?text=${msg}`,'_blank');
+    });
+
+    document.getElementById('clearCart').addEventListener('click',()=>{ if(confirm('Clear all items from cart?')){ state.cart=[]; saveCart(); renderCart(); }});
+    $search.addEventListener('input', e=>{ state.q = e.target.value.trim().toLowerCase(); render(); });
+    $category.addEventListener('change', e=>{ state.cat = e.target.value; render(); });
+    $sort.addEventListener('change', e=>{ state.sort = e.target.value; render(); });
+    document.addEventListener('click', e=>{ const add = e.target.getAttribute('data-add'); const incC = e.target.getAttribute('data-inc'); const decC = e.target.getAttribute('data-dec'); if(add) addToCart(add); if(incC) inc(incC); if(decC) dec(decC); });
+
+    render(); renderCart();
+  </script>
+</body>
+</html>
